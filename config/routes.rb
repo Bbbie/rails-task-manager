@@ -5,14 +5,20 @@ Rails.application.routes.draw do
   get 'tasks', to: 'tasks#index'
 
   # 2 create new task
-  # get the form
+  # GET the form
   get 'tasks/new', to: 'tasks#new'
-  # post the input
+  # POST the input
   post 'tasks', to: 'tasks#create'
 
   # 3 view one
-  get 'task/:id', to: 'tasks#show', as: :task
+  get 'tasks/:id', to: 'tasks#show', as: :task
 
+  # 4 edit a task
+  # GET the form (pre-filled) for editing
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit
+  # PATCH the parameters (update what was changes only)
+  patch 'tasks/:id', to: 'tasks#update'
 
+  # 5 delete a task
 
 end
