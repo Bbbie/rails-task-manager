@@ -4,11 +4,12 @@
   <% @tasks.each do |task| %>
     <% x = task.completed ? "[x]" : "[ ]" %>
     <li>
-      <%= x %>
-      <%= task.title %>
+      <%= x %> <%= link_to task.title, task_path(task) %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "Create Task", tasks_new_path %>
 
 
 
