@@ -5,7 +5,10 @@
     <% x = task.completed ? "✅" : "❎" %>
     <li>
       <%= x %> <%= link_to task.title, task_path(task) %>
-      <%= link_to "| 🗑", destroy_path(task), method: :delete, data: { confirm: "Are you sure you want to delete #{task.title}? You can't redo this action."} %>
+      <%= link_to "| 🗑",
+      destroy_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure you want to delete #{task.title}? This is a permanent action."} %>
     </li>
   <% end %>
 </ul>
